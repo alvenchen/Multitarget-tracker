@@ -1,5 +1,6 @@
 #include "MouseExample.h"
 #include "VideoExample.h"
+#include "Yolo3Example.h"
 
 #include <opencv2/opencv.hpp>
 #include <opencv2/core/ocl.hpp>
@@ -92,6 +93,20 @@ int main(int argc, char** argv)
 		break;
 	}
 #endif
+
+    case 7:
+    {
+        YoloExample yolo_detector(parser);
+        yolo_detector.Process();
+        break;
+    }
+
+    case 8:
+    {
+        Yolo3Example yolo3_detector(parser);
+        yolo3_detector.Process();
+        break;
+    }
 
     default:
         std::cerr << "Wrong example number!" << std::endl;

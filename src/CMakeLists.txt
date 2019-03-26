@@ -17,7 +17,7 @@ set(main_sources nms.h defines.h)
              Detector/PedestrianDetector.cpp
              Detector/pedestrians/c4-pedestrian-detector.cpp
              Detector/SSDMobileNetDetector.cpp
-             Detector/YoloDetector.cpp
+             Detector/YoloDetector.cpp            
 
              Detector/BaseDetector.h
              Detector/MotionDetector.h
@@ -33,11 +33,14 @@ set(main_sources nms.h defines.h)
              Detector/PedestrianDetector.h
              Detector/pedestrians/c4-pedestrian-detector.h
              Detector/SSDMobileNetDetector.h
-             Detector/YoloDetector.h
+             Detector/YoloDetector.h             
 )
 
+option(BUILD_YOLO_LIB "Should use the yolo to detect object?" ON)
+
 if (BUILD_YOLO_LIB)
-    set(detector_sources ${detector_sources} Detector/YoloDarknetDetector.cpp Detector/YoloDarknetDetector.h)
+    #set(detector_sources ${detector_sources} Detector/YoloDarknetDetector.cpp Detector/YoloDarknetDetector.h)
+    set(detector_sources ${detector_sources} Detector/Yolo3Detector.cpp Detector/Yolo3Detector.h)
 endif()
 
   set(tracker_sources
@@ -233,7 +236,7 @@ set(LIBS
 endif()
 
 if (BUILD_YOLO_LIB)
-    set(LIBS ${LIBS} yolo_lib)
+    set(LIBS ${LIBS} yolo3_lib)
 endif(BUILD_YOLO_LIB)
 
 target_link_libraries(${PROJECT_NAME} ${LIBS})

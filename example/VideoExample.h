@@ -187,6 +187,8 @@ protected:
         settings.m_useLocalTracking = m_useLocalTracking;
         settings.m_distType = tracking::DistCenters;
         settings.m_kalmanType = tracking::KalmanLinear;
+        //settings.m_kalmanType = tracking::KalmanUnscented;
+        //settings.m_kalmanType = tracking::KalmanAugmentedUnscented;
         settings.m_filterGoal = tracking::FilterRect;
         settings.m_lostTrackType = tracking::TrackKCF;    // Use KCF tracker for collisions resolving
         settings.m_matchType = tracking::MatchHungrian;
@@ -580,7 +582,9 @@ protected:
         TrackerSettings settings;
         settings.m_useLocalTracking = m_useLocalTracking;
         settings.m_distType = tracking::DistRects;
-        settings.m_kalmanType = tracking::KalmanLinear;
+        //settings.m_kalmanType = tracking::KalmanLinear;
+        //settings.m_kalmanType = tracking::KalmanAugmentedUnscented;
+        settings.m_kalmanType = tracking::KalmanUnscented;
         settings.m_filterGoal = tracking::FilterRect;
         settings.m_lostTrackType = tracking::TrackKCF;       // Use KCF tracker for collisions resolving
         settings.m_matchType = tracking::MatchHungrian;

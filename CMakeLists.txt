@@ -38,7 +38,7 @@ endif(BUILD_CARS_COUNTING)
 
 option(BUILD_YOLO_LIB "Should compiled standalone yolo_lib with original darknet?" OFF)
 if (BUILD_YOLO_LIB)
-    add_subdirectory(src/Detector/darknet)
+    add_subdirectory(src/Detector/darknet_v3)
     add_definitions(-DBUILD_YOLO_LIB)
 
 if (MSVC)

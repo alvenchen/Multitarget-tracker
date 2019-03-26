@@ -71,6 +71,10 @@ BaseDetector* CreateDetector(
         detector = new YoloOCVDetector(collectPoints, gray);
         break;
 
+    case tracking::Yolo3:
+        detector = new Yolo3Detector(collectPoints, gray);
+        break;
+
 	case tracking::Yolo_Darknet:
 #ifdef BUILD_YOLO_LIB
 		detector = new YoloDarknetDetector(collectPoints, gray);
