@@ -4,6 +4,7 @@
 #include "PedestrianDetector.h"
 #include "SSDMobileNetDetector.h"
 #include "YoloDetector.h"
+#include "Yolo3Detector.h"
 
 #ifdef BUILD_YOLO_LIB
 #include "YoloDarknetDetector.h"

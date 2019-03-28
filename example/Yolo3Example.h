@@ -33,9 +33,10 @@ protected:
         config["modelBinary"] = pathToModel + "yolov3.weights";
         config["classNames"] = pathToModel + "coco.names";
        
+       config["dnnTarget"] = "DNN_TARGET_CPU";
+       
         config["confidenceThreshold"] = "0.7";
-        //config["maxCropRatio"] = "2.0";
-        //config["dnnTarget"] = "DNN_TARGET_CPU";
+        //config["maxCropRatio"] = "2.0";        
         //config["dnnBackend"] = "DNN_BACKEND_INFERENCE_ENGINE";
 
 
